@@ -1,20 +1,310 @@
 <!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=" />
+
+	<div id="sidebar-left"  class="col-md-2" style="height: 680px;overflow-y: auto;background-color: gray;margin: 0; padding: 0;">
+				<div id="img" class="nav-collapse sidebar-nav" style="margin: 0;padding: 0;">
+					<ul id="img" class="nav nav-tabs nav-stacked ">
+            <li id="sett"><a href="#" >Setting Panel</a>
+              </li>
+                  
+                  <li id="ab" >Radius <input id="g1" #radRef (change)="changeRadius(radRef.value)" ng-model="rad" type="number" name="rad" min="0" max="15" step="1" value="7"> </li>
+                  <li id="ab">Alpha <input id="g1" #alphaRef (change)="changeAlpha(alphaRef.value)" ng-model="alpha" type="number" name="alpha" min="-5" max="5" step="1" value="1"> </li>
+                  <li id="ab">Theta <input id="g1" #thetaRef (change)="changeTheta(thetaRef.value)" ng-model="theta" type="number" name="theta" min="-5" max="5" step="1" value="1"> </li>
+                  <li id="ab">Gravity <input id="g1" #gravityRef (change)="changeGravity(gravityRef.value)" ng-model="gravity" type="number" name="gra" min="0.01" max="2" step="0.01" value="0.06"> </li>
+                  <li id="ab">Link Distance <input id="g1" #distRef (change)="changeDistance(distRef.value)" ng-model="distance" type="number" name="dist" min="0" max="100" step="5" value="30"> </li>
+                  <li id="ab">Friction <input id="g1" #frictionRef (change)="changeFriction(frictionRef.value)" ng-model="friction" type="number" name="frc" min="-2" max="1" step="0.1" value="0.1"> </li>
+                  <li id="ab">Link Strength <input id="g1" #linkSRef (change)="changeStrength(linkSRef.value)" ng-model="lnkS" type="number" name="quantity" min="0" max="1" step="0.1" value="0"> </li>
+                 <!-- <li id="ab">Font Size <input id="g1" #fontRef (change)="changeFont(fontRef.value)" ng-model="font-change" type="number" name="fontC" min="5" max="20" step="1" value="10"> </li>
+                -->  <li id="ab">Height <input id="g1" #heightRef (change)="changeHeight(heightRef.value)" ng-model="Height" type="number" name="hh" min="200" max="1000" step="50" value="600"> </li>
+                  <li id="ab"class="myFirst">Show Tooltip <input id="cb" #tipRef (change)="changeTooltip(tipRef.value)" type="checkbox" name="vehicle1" value="true" checked ></li>
+        </ul>
+			</div>
+		</div>
+   
+<div class="box col-md-6" height="1000" style="overflow-x:auto;">
+  <div style="height:40px;margin-top:20px;">
+        <h4 style="text-align:center;margin-bottom:9px;color:black;">My Skills</h4>
+  </div>   
+        <nvd3   [options]="options" [data]="data"  config="{refreshDataOnly: false, deepWatchDataDepth: 0}" [api]="api" ></nvd3>
+       
+   
+</div>   
+
+<div class="col-md-4">
+ 
+    
+<ul class="nav nav-tabs">
+    <li ><a id="m1" #abt onClick="changeInfo(1);" href="#">About Me /</a></li>
+    <li><a id="m1" #exp onClick="changeInfo(2);" href="#">Experience /</a></li>
+    <li><a id="m1" #skill onClick="changeInfo(3)" href="#">Skills /</a></li>
+    <li><a id="m1"#proj onClick="changeInfo(4)" href="#">Projects /</a></li>
+    <li><a id="m1" #edu onClick="changeInfo(5)" href="#"> Education</a></li>
+  </ul>
+    
+    
+<app-info ></app-info>
+    
+ 
+<div id="11"  class="text-center ">
+  <h1> About Devanshi</h1>
+  <p style="text-align: justify; "> Hi I am a full-Stack developer and Software Engineering student at Arizona State University graduating in December-2017.
+    I had around 2 years of past experience in my startup named <b> Soft-Soluca </b> as a developer. 
+    The projects I have done are of the highest quality, fully responsive, and tested in a wide range of devices. I take a great care to ensure each project is well-documented and easily maintainable so it can be easy to enhance a project on demand.
+    Currently I am a summer Intern in <b>TrySome, Inc.</b> and looking for full time opportunity. 
+ </p>
 </div>
-<h2>Here are some links to help you start: </h2>
+
+<div  id="12"  style="text-align: justify; ">
+  <h1 class="text-center"> Experience</h1><br>
+  <p class="text-center"><strong> TrySome, Inc. (current)</strong></p>
+  <p><strong> Graduate Software Developer Intern (Summer) <br>
+   Booklyn, NY <br> 
+   June 19, 2017 - August 15, 2017</strong>
+   </p><br>
+   <p class="text-center"><strong> Soft Soluca (Past)</strong></p>
+   <p> <strong>Co-Founder, Software Developer and Requirement engineer <br>
+   Gujarat, India<br>
+    June 2013 – January 2015 (1 year 8 months) </strong>  <br> <br> 
+   In my work experience in Soft Soluca, I,
+  developed innovative projects using C, C++, Java, Android, JavaScript for undergraduate students in Networking and Security, Graphics, Database Management, Web and Mobile development areas. The goal was not only to help them in the development but also to involve them in project development process. 
+ and served as a tutor for students by teaching them the underlying technology, scalability, performance enhancement principles and basics concepts of Object Oriented designs related to project by excellently working in team. 
+I achieved the goal of maintaining the good client relationships and developing excellent communication skills proven by getting many projects on recommendation. 
+ </p>
+
+<h2 class="text-center"> Work Projects</h2>
+<ul class="text-left">
+            <li style="font-size:17px;"> Twitter Sentiment analysis on Cloud cluster with Hadoop</li>
+            <li style="font-size:17px;"> Shooting Stars Game</li>
+            <li style="font-size:17px;"> Online Voting System</li>
+            <li style="font-size:17px;"> Quote Application</li>
+            <li style="font-size:17px;"> Online Adaptive Exam website</li>
+            <li style="font-size:17px;"> Online chatting</li>
+            <li style="font-size:17px;">Graphics Editor</li>
+            <li style="font-size:17px;">Doctor Software</li>
+            <li style="font-size:17px;">Pizza Order Application</li>
+            <li style="font-size:17px;"> Library Management System</li>
+          </ul>
+</div>
+
+<div id="13" >
+  <h1 class="text-center"> Skills</h1>
+  <div class="row-fluid">
+  <div class="col-md-6"  style="height:670px;">
+  <h3 style="color:#777;"> Languages</h3>
+      <ul>
+        <li>Core Java</li>
+         <li>Python </li>
+        <li> C</li>
+        <li>C++</li>
+        <li>SQL</li>
+      </ul>
+      
+    
+    
+      <h3 style="color:#777;"> Mobile and Database</h3>
+      <ul>
+        <li> Android Studio</li>
+        <li> MySQL</li>
+        <li>Oracle</li>
+      </ul>
+      
+   
+    
+      <h3 style="color:#777;"> Technology </h3>
+      <ul>
+        <li>Apache Hadoop</li>
+        <li>Cloud computing </li>
+        <li>Linux</li>
+        <li> Apache Tomcat</li>
+        <li> Eclipse</li>
+      </ul>
+</div>
+  
+    <div class="col-md-6"  style="height:670px;">
+      <h3 style="color:#777;"> Web Development</h3>
+      <ul>
+        <li> HTML5</li>
+        <li> CSS3 </li>
+        <li> Javascript</li>
+        <li> jQuery</li>
+        <li> Django</li>
+        <li> D3.js</li>
+        <li> Node.js</li>
+        <li>Angular.js</li>
+        <li>angular - CLI</li>
+        <li>REST API</li>
+        <li>AJAX</li>
+        <li>PHP</li>
+        <li> Bootstrap</li>
+        </ul>
+<h3 style="color:#777;">Software Engineering</h3>
+      <ul>
+  <li> SDLC - Software Development Life Cycle</li>
+  <li> OOD/OOA - Object Oriented Design/Analysis</li>
+  <li> Agile development</li>
+  <li> Requirement Engineering</li>
+  <li> Reverse Engineering</li>
+  <li> Project Management</li>
+      </ul>  
+    </div>
+</div>
+    
+</div>
+
+
+
+<div id="14" ><h1 class="text-center"> Projects &nbsp;<span><a style="font-size:12px;" id="sp1" onclick="changeInfo(13)" href="#"> &lt;- Go back</a></span></h1> 
+<div id="back">
 <ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/docs/ts/latest/tutorial/">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="http://angularjs.blogspot.ca/">Angular blog</a></h2>
-  </li>
+<li style="height:40px;"> <a id="proj1"   href="#" onclick="changeInfo(6)"> QuizIT</a></li>
+<li style="height:40px;"> <a id="proj1"  href="#" onclick="changeInfo(7)">USG - University Selection Guide</a></li>
+<li style="height:40px;"> <a id="proj1"  href="#" onclick="changeInfo(8)">SANA application Module</a></li>
+<li style="height:40px;"> <a id="proj1"  href="#" onclick="changeInfo(9)">ADP Programming Language</a></li>
+<li style="height:40px;"><a id="proj1"  href="#" onclick="changeInfo(10)">Linux Journal File System with Version History</a></li>
+<li style="height:40px;"><a id="proj1"  href="#" onclick="changeInfo(11)">Income Tax Return Software for Consultant</a></li>
+ 
 </ul>
+</div>
+
+<div id="p1">
+<h3 style="color:#777;text-align: center;">1. QUIZIT</h3>
+<img  src="../assets/quizit.jpg" class="img-thumbnailed img-responsive" id="MyImg" alt="Hello Nature" width="400" height="220" style="height:220px;margin-top: 20px;align-self: center;border: 2px solid black;" >
+<img  src="../assets/quizit2.jpg" class="img-thumbnailed img-responsive" id="MyImg" alt="Hello Nature" width="400" height="220" style="height:220px;margin-top: 20px;align-self: center;border: 2px solid black;" >
+
+<p id="afterImg" style="text-indent: 0px;margin-top: 20px;">A platform that allows students to sign up receiving daily programming quiz from instructor
+					by applying distributed and reflective practices strategy to help students get exposed to programming concepts & problem-solving everyday.<br>
+          </p>
+          <p style="text-align: left;text-indent: 0px;"> Features: </p>
+          <p style="text-align: left;text-indent: 0px;">
+          - supports multiple choices quizzes authoring, delivery, and self-assessment<br>
+          - provides voluntary daily quiz and distributed and reflective practices<br>
+          - embeds multiple visual analytics (social, progress, knowledge-based) <br>
+          - offers adaptive readings/quizzes recommendations, peer feedback
+          </p>
+</div>
+
+<div id="p2">
+<h3 style="color:#777;text-align: center;"> USG - University Selection Guide</h3>
+<img  src="../assets/USG.jpg" class="img-thumbnailed img-responsive" id="MyImg" alt="Hello Nature" width="400" height="220" style="height:220px;margin-top: 20px;align-self: center;border: 2px solid black;" >
+<img src="../assets/USG2.jpg" class="img-thumbnailed img-responsive" id="MyImg" alt="Hello Nature" width="400" height="220" style="height:220px;margin-top: 20px;align-self: center;border: 2px solid black;" >
+<p id="afterImg" style="text-indent: 0px;margin-top: 20px;">A semantic Web application that uses a variety of data sources and links them in a meaningful
+          way for selecting the university for students.The application data was unbiased with the provision of the self-guiding user interface.
+          The application was unique than that of the already available University tools because of following new features.
+          </p>
+          <p style="text-align: left;text-indent: 0px;">
+            -	Location State, City along with city-wise population <br>
+            - Gender Ratio Men: Women <br>
+            - Professor full details including universal ranking <br>
+            - Tuitions fees, hostel fees and other expenses <br>
+            - Financial Aid, Loan, Repayment Rate <br>
+            - Crime Rate both on-campus and off-campus
+            
+          </p>
+</div>
+
+<div id="p3">
+<h3 style="color:#777;text-align: center;"> SANA application Module</h3>
+          <p style="text-indent: 0px;">SANA is a m-Healthcare application developed by students of MIT. SANA application was dependent upon other
+          applications to support various media formats. The project the goal was to resolve that problem and extend the application such that it can
+          support all the basic media formats.</p>
+</div>
+
+<div id="p4">
+<h3 style="color:#777;text-align: center;"> ADP Programming Language</h3>
+          <p style="text-indent: 0px;">Developed a language compiler rules using ANTLR4 and generated parser and Lexer. The compiler automatically
+          transfers the input program into intermediate language code or gives compile-time error.</p>
+</div>
+
+<div id="p5">
+<h3 style="color:#777;text-align: center;"> Linux Journal File System with Version History</h3>
+          <p style="text-indent: 0px;">Linux OS uses version history to keep track of data loss and retrieve to the last committed state. Journal
+          file storage system implements the same idea. The project was implemented individually and completed successfully in following four phases.
+          <br>
+1. Error Free environment <br>
+2. Error Free environment with multi-threading (before or after atomicity) <br>
+3. Error-prone system without multi-threading <br>
+4. An error-prone system with multi-threading.</p>
+</div>
+
+<div id="p6">
+<h3 style="color:#777;text-align: center;"> Income Tax Return Software for Consultant</h3>
+          <p style="text-indent: 0px;">An Income tax return Software for consultant purpose which automatically counts reduced Income tax.
+          The software was highly complex and uses complex backend database. The software was also modifiable according to changing Income tax
+          rules every year.</p>
+</div>
+
+
+
+
+
+
+<script>
+
+      
+
+
+function perform(id){
+  if(id == 1){
+    $('#p1').show();
+    $('#back').hide();
+  }
+  else if(id ==2){
+    $('#p2').show();
+    $('#back').hide();
+  }
+  else if(id ==3){
+    $('#p3').show();
+    $('#back').hide();
+  }
+  else if(id ==4){
+    $('#p4').show();
+    $('#back').hide();
+  }
+  else if(id ==5){
+    $('#p5').show();
+    $('#back').hide();
+  }
+  else if(id ==6){
+    $('#p6').show();
+    $('#back').hide();
+  }
+ 
+}
+
+</script>
+
+</div> <!--end project -->
+  
+  
+
+
+  <div id="15" style="height:100px;">
+    <h1 class="text-center"> Education</h1>
+    <div class="row">
+      <div class="col-md-5" style="text-align:center;border:none;height:100;">
+        <p style="font-size:15px;"> <strong>Software Engineering (MS) <br>
+        Ira. a Fulton School of engineering,<br>
+            Arizona State University,<br>
+            Tempe, USA
+            <p>GPA - 3.2</p>
+            </strong>
+        
+        </p>
+      </div>
+     <div class="col-md-1" style="border-right: 1px solid black;height:100;"></div>
+      <div class="col-md-5" style="text-align:center;font-size:17px;height:100;">
+        <p style="font-size:15px;"><strong> Computer Science (BE) <br>
+        Faculty of Technology and Engineering,<br>
+            Maharaja Sayajirao University,<br>
+            Vadodara, India
+            <p>GPA - 3.5</p>
+        </strong>
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+
+  
+</div>
 
